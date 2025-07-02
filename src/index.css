@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hide scrollbar for webkit browsers */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  /* Improve touch targets */
+  button {
+    min-height: 44px;
+  }
+
+  /* Prevent zoom on input focus */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  /* Better text wrapping on mobile */
+  .terminal-text {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Reduce font size slightly on very small screens */
+  @media (max-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+  }
+}
+
+/* Fix text direction issues on mobile */
+input,
+textarea {
+  direction: ltr !important;
+  text-align: left !important;
+  unicode-bidi: embed !important;
+}
+
+/* Ensure proper RTL handling doesn't interfere */
+* {
+  unicode-bidi: normal;
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better touch feedback */
+button:active {
+  transform: scale(0.98);
+}
