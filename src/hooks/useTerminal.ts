@@ -84,7 +84,7 @@ export const useTerminal = () => {
         case "pwd":
           output = "/home/givenby/portfolio";
           break;
-        case "cat":
+        case "cat": {
           const filename = args[0];
           if (!filename) {
             output =
@@ -117,6 +117,7 @@ export const useTerminal = () => {
             ).join(", ")}`;
           }
           break;
+        }
         default:
           output = `Command not found: ${command}\nType 'help' for available commands.`;
       }
